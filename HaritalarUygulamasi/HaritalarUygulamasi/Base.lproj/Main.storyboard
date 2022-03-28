@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3jK-gP-7Cw">
-                                <rect key="frame" x="0.0" y="220" width="414" height="642"/>
+                                <rect key="frame" x="0.0" y="183" width="414" height="640"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="İsim Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXT-gh-5xz">
                                 <rect key="frame" x="49" y="75" width="316" height="34"/>
@@ -29,20 +29,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7h-s8-2vv">
+                                <rect key="frame" x="156" y="831" width="103" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pue-KL-IVg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Kaydet">
+                                    <color key="baseBackgroundColor" systemColor="tertiaryLabelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="kaydetTiklandi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msx-xH-rrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SXT-gh-5xz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Nf-os-MNR"/>
-                            <constraint firstItem="SXT-gh-5xz" firstAttribute="trailing" secondItem="sin-Yn-NM0" secondAttribute="trailing" id="2bX-LU-mAv"/>
-                            <constraint firstItem="SXT-gh-5xz" firstAttribute="leading" secondItem="sin-Yn-NM0" secondAttribute="leading" id="94Z-sp-TT1"/>
-                            <constraint firstItem="sin-Yn-NM0" firstAttribute="top" secondItem="SXT-gh-5xz" secondAttribute="bottom" constant="22" id="IXO-fg-2xm"/>
-                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="top" secondItem="sin-Yn-NM0" secondAttribute="bottom" constant="55" id="MDJ-nm-bz9"/>
-                            <constraint firstItem="SXT-gh-5xz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="Xc9-pu-Xub"/>
-                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zug-gW-gq0"/>
-                            <constraint firstItem="SXT-gh-5xz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="dGW-dc-1Z8"/>
-                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i6m-V6-h3P"/>
-                            <constraint firstItem="sin-Yn-NM0" firstAttribute="centerX" secondItem="3jK-gP-7Cw" secondAttribute="centerX" id="iy9-SE-TnR"/>
+                            <constraint firstItem="SXT-gh-5xz" firstAttribute="trailing" secondItem="sin-Yn-NM0" secondAttribute="trailing" id="1pP-lN-hss"/>
+                            <constraint firstItem="SXT-gh-5xz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="Drv-G4-HJw"/>
+                            <constraint firstItem="SXT-gh-5xz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NaC-ik-8nZ"/>
+                            <constraint firstItem="sin-Yn-NM0" firstAttribute="top" secondItem="SXT-gh-5xz" secondAttribute="bottom" constant="22" id="Y6R-lW-nRJ"/>
+                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="top" secondItem="sin-Yn-NM0" secondAttribute="bottom" constant="18" id="Zdq-MS-V2m"/>
+                            <constraint firstItem="SXT-gh-5xz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="bFU-u6-5fI"/>
+                            <constraint firstItem="a7h-s8-2vv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="chb-FC-W3g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="a7h-s8-2vv" secondAttribute="bottom" constant="-9" id="dyq-nP-Iqz"/>
+                            <constraint firstItem="a7h-s8-2vv" firstAttribute="top" secondItem="3jK-gP-7Cw" secondAttribute="bottom" constant="8" id="hEc-of-Mcd"/>
+                            <constraint firstItem="SXT-gh-5xz" firstAttribute="leading" secondItem="sin-Yn-NM0" secondAttribute="leading" id="hQT-y9-7r7"/>
+                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="meK-ej-Sa2"/>
+                            <constraint firstItem="3jK-gP-7Cw" firstAttribute="centerX" secondItem="a7h-s8-2vv" secondAttribute="centerX" id="vB0-M1-oRl"/>
+                            <constraint firstItem="sin-Yn-NM0" firstAttribute="centerX" secondItem="3jK-gP-7Cw" secondAttribute="centerX" id="vCe-Wv-Kqr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,6 +75,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
