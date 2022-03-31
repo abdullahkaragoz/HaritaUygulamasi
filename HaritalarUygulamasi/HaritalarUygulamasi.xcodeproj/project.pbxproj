@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		CC024F2327EFC644006E2C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC024F2227EFC644006E2C93 /* AppDelegate.swift */; };
 		CC024F2527EFC644006E2C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC024F2427EFC644006E2C93 /* SceneDelegate.swift */; };
-		CC024F2727EFC644006E2C93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC024F2627EFC644006E2C93 /* ViewController.swift */; };
+		CC024F2727EFC644006E2C93 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC024F2627EFC644006E2C93 /* MapsViewController.swift */; };
 		CC024F2A27EFC644006E2C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC024F2827EFC644006E2C93 /* Main.storyboard */; };
 		CC024F2D27EFC644006E2C93 /* HaritalarUygulamasi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC024F2B27EFC644006E2C93 /* HaritalarUygulamasi.xcdatamodeld */; };
 		CC024F2F27EFC645006E2C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC024F2E27EFC645006E2C93 /* Assets.xcassets */; };
 		CC024F3227EFC645006E2C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC024F3027EFC645006E2C93 /* LaunchScreen.storyboard */; };
+		CC0694BF27F4F78D00527FBB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0694BE27F4F78D00527FBB /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC024F1F27EFC644006E2C93 /* HaritalarUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaritalarUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC024F2227EFC644006E2C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC024F2427EFC644006E2C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC024F2627EFC644006E2C93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC024F2627EFC644006E2C93 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		CC024F2927EFC644006E2C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC024F2C27EFC644006E2C93 /* HaritalarUygulamasi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HaritalarUygulamasi.xcdatamodel; sourceTree = "<group>"; };
 		CC024F2E27EFC645006E2C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC024F3127EFC645006E2C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC024F3327EFC645006E2C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC0694BE27F4F78D00527FBB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,10 @@
 		CC024F2127EFC644006E2C93 /* HaritalarUygulamasi */ = {
 			isa = PBXGroup;
 			children = (
+				CC0694BE27F4F78D00527FBB /* ListViewController.swift */,
 				CC024F2227EFC644006E2C93 /* AppDelegate.swift */,
 				CC024F2427EFC644006E2C93 /* SceneDelegate.swift */,
-				CC024F2627EFC644006E2C93 /* ViewController.swift */,
+				CC024F2627EFC644006E2C93 /* MapsViewController.swift */,
 				CC024F2827EFC644006E2C93 /* Main.storyboard */,
 				CC024F2E27EFC645006E2C93 /* Assets.xcassets */,
 				CC024F3027EFC645006E2C93 /* LaunchScreen.storyboard */,
@@ -141,9 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC024F2727EFC644006E2C93 /* ViewController.swift in Sources */,
+				CC024F2727EFC644006E2C93 /* MapsViewController.swift in Sources */,
 				CC024F2327EFC644006E2C93 /* AppDelegate.swift in Sources */,
 				CC024F2D27EFC644006E2C93 /* HaritalarUygulamasi.xcdatamodeld in Sources */,
+				CC0694BF27F4F78D00527FBB /* ListViewController.swift in Sources */,
 				CC024F2527EFC644006E2C93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
