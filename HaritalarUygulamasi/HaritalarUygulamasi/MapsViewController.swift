@@ -19,6 +19,14 @@ class MapsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var secilenLatitude = Double()
     var secilenLongitude = Double()
     
+    var secilenIsim = ""
+    var secilenId : UUID?
+    
+    var annonationTitle = ""
+    var annonationSubTitle = ""
+    var annonationLatitude = Double()
+    var annonationLongitude = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
@@ -31,6 +39,64 @@ class MapsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(konumSec(gestureRecognizer:)))
         gestureRecognizer.minimumPressDuration = 1
         mapView.addGestureRecognizer(gestureRecognizer)
+        
+        if secilenIsim != "" {
+            // Core Data'dan verileri çek
+            
+            if let uuidString = secilenId?.uuidString{
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Yer")
+                fetchRequest.predicate = NSPredicate(format: "id = %@", uuidString)
+                fetchRequest.returnsObjectsAsFaults = false
+                
+                do {
+                    let sonuclar = try context.fetch(fetchRequest)
+                    
+                    if sonuclar.count > 0 {
+                            
+                        for sonuc in sonuclar as! [NSManagedObject] {
+                            
+                            if let isim = sonuc.value(forKey: "isim") as? String {
+                                annonationTitle = isim
+                                if let not = sonuc.value(forKey: "not") as? String {
+                                    annonationSubTitle = not
+                                    if let latitude = sonuc.value(forKey: "latitude") as? Double {
+                                        annonationLatitude = latitude
+                                        if let longitude = sonuc.value(forKey: "longitude") as? Double {
+                                            annonationLongitude = longitude
+                                        
+                                            let annotation = MKPointAnnotation()
+                                            annotation.title = annonationTitle
+                                            annotation.subtitle = annonationSubTitle
+                                            let coordinate = CLLocationCoordinate2D(latitude: annonationLatitude, longitude: annonationLongitude)
+                                            annotation.coordinate = coordinate
+
+                                            mapView.addAnnotation(annotation)
+                                            isimTextField.text = annonationTitle
+                                            notTextField.text = annonationSubTitle
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            
+                        }
+                        
+                    }
+                    
+                } catch {
+                    print("Veri çekilirken hata oluştu!")
+                }
+                
+            }
+        } else {
+            // Yeni veri ekle
+        
+        }
+        
     }
     
     @objc func konumSec(gestureRecognizer : UILongPressGestureRecognizer){

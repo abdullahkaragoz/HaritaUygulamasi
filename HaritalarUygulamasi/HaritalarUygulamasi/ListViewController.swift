@@ -13,6 +13,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     var isimDizisi = [String]()
     var idDizisi = [UUID]()
+    var secilenYerIsmi = ""
+    var secilenYerId : UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func artiButtonuTiklandi(){
+        secilenYerIsmi = ""
         performSegue(withIdentifier: "toMapsVC", sender: nil)
     }
     
@@ -76,4 +79,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        secilenYerIsmi = isimDizisi[indexPath.row]
+        secilenYerId = idDizisi[indexPath.row]
+        performSegue(withIdentifier: "toMapsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapsVC" {
+            let destinationVC = segue.destination as! MapsViewController
+            destinationVC.secilenIsim = secilenYerIsmi
+            destinationVC.secilenId = secilenYerId
+        }
+    }
 }
