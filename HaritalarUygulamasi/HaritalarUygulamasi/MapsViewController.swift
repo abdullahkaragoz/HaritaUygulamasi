@@ -106,6 +106,34 @@ class MapsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        if secilenIsim != "" {
+                
+            let requestLocation = CLLocation(latitude: annonationLatitude, longitude: annonationLongitude)
+            
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { (placeMarkDizisi, hata) in
+                
+                if let placeMarks = placeMarkDizisi{
+                    if placeMarks.count > 0 {
+                        
+                        let yeniPlaceMark  = MKPlacemark(placemark: placeMarks[0])
+                        let item = MKMapItem(placemark: yeniPlaceMark)
+                        item.name = self.annonationTitle
+                        
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                        
+                        item.openInMaps(launchOptions: launchOptions)
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    
     @objc func konumSec(gestureRecognizer : UILongPressGestureRecognizer){
         
         if gestureRecognizer.state == .began {
